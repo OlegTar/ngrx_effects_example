@@ -1,0 +1,26 @@
+<button (click)="reload()">Reload</button>
+
+<div>
+<textarea #text></textarea>
+<button (click)="addMessage(text.value)">Add</button>
+</div>
+
+<div *ngIf="!messages; else loadedMessages">
+    Loading...
+</div>
+
+<ng-template #loadedMessages>
+    <hr>
+    <div *ngFor="let message of messages">
+        <button (click)="deleteMessage(message.id)">Delete</button>
+        <div>
+            {{ message.data }}
+        </div>
+        <hr>
+    </div>
+</ng-template>
+
+<div>
+<textarea #text2></textarea>
+<button (click)="addMessage(text2.value)">Add</button>
+</div>

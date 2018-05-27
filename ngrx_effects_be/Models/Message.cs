@@ -8,6 +8,6 @@ namespace ngrx_effects_be.Models
     public class Message
     {
         public int Id { get; set; }
-        public string data { get; set; }
+        public string Data { get; set; }
     }
 }

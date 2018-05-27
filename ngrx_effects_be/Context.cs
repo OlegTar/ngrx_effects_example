@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using ngrx_effects_be.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ngrx_effects_be
 {
-    public class Context: DbContext
+    public class Context : DbContext
     {
         public DbSet<Message> Messages{ get; set; }
 
