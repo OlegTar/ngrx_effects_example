@@ -1,0 +1,13 @@
+<button (click)="click()">Click</button>
+
+<div [ngSwitch]="state">
+  <div *ngSwitchCase="stateEnum.PendingRequest">
+    Loading...
+  </div>
+  <div *ngSwitchCase="stateEnum.Error">
+    Error!
+  </div>
+  <div *ngSwitchCase="stateEnum.Success">
+    Success
+  </div>
+</div>
