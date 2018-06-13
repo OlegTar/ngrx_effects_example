@@ -40,7 +40,7 @@ export class DeleteMessageActionSuccess implements Action {
     constructor (public payload: null) {}
 }
 
-export type MessageAction = RequestGetMessagesAction 
+export type MessageAction = RequestGetMessagesAction
     | RequestAddMessageAction
     | RequestDeleteMessageAction
     | GetMessagesActionSuccess

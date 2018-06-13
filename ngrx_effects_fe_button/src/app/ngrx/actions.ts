@@ -1,4 +1,4 @@
-import { Action } from "@ngrx/store";
+import { Action } from '@ngrx/store';
 
 export const REQUEST = 'request';
 export const SUCCESS = 'success';
@@ -21,7 +21,7 @@ export class ResetAction implements Action {
     type = RESET;
 }
 
-export type MyActions = RequestAction 
+export type MyActions = RequestAction
     | SuccessAction
     | ErrorAction
     | ResetAction;

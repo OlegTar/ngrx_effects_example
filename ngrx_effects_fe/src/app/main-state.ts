@@ -1,11 +1,11 @@
-import { State, reducer } from "./ngrx/reducer";
-import { ActionReducerMap } from "@ngrx/store";
-import { MessageAction } from "./ngrx/actions";
+import { State, reducer } from './ngrx/reducer';
+import { ActionReducerMap } from '@ngrx/store';
+import { MessageAction } from './ngrx/actions';
 
 export interface MainState {
-    main: State
+    main: State;
 }
 
 export const MainStateReducers: ActionReducerMap<MainState, MessageAction> = {
     main: reducer
-}
+};

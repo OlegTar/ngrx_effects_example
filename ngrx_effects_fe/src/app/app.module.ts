@@ -4,10 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { EffectsModule } from '@ngrx/effects';
 import { MessageEffects } from './ngrx/effects';
-import { StoreModule } from '@ngrx/store';
-import { reducer } from './ngrx/reducer';
+import { StoreModule, ActionReducer } from '@ngrx/store';
+import { State } from './ngrx/reducer';
 import { MainStateReducers } from './main-state';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+
+export function logger(reducer_: ActionReducer<State>): ActionReducer<any, any> {
+  return function (state: State, action: any): State {
+      console.log('state', state);
+      console.log('action', action);
+
+      return reducer_(state, action);
+  };
+}
 
 @NgModule({
   declarations: [
@@ -15,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(MainStateReducers),
+    StoreModule.forRoot(MainStateReducers, { metaReducers: [logger]}),
     EffectsModule.forRoot([MessageEffects]),
     HttpClientModule
   ],

@@ -14,7 +14,7 @@ import * as actions from './ngrx/actions';
 export class AppComponent implements OnInit, OnDestroy {
   messages: Message[];
   subscription = new Subscription();
-  constructor(private store: Store<MainState>, private cdr: ChangeDetectorRef) {        
+  constructor(private store: Store<MainState>, private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit() {
@@ -26,11 +26,11 @@ export class AppComponent implements OnInit, OnDestroy {
     ));
     this.reload();
   }
-  
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-  
+
   reload() {
     this.store.dispatch(new actions.RequestGetMessagesAction(null));
   }

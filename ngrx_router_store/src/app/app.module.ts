@@ -16,7 +16,7 @@ import { LogComponent } from './log/log.component';
     AppComponent,
     OtherComponent,
     FirstComponent,
-    LogComponent,    
+    LogComponent,
   ],
   imports: [
     BrowserModule,

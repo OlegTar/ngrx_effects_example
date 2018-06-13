@@ -1,6 +1,6 @@
 export enum RequestState {
     Idle,
-    PendingRequest,
+    Pending,
     Success,
     Error
 }

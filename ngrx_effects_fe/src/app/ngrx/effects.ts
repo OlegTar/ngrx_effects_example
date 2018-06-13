@@ -1,16 +1,16 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
 import { switchMap, map, startWith } from 'rxjs/operators';
-import { Action } from "@ngrx/store";
-import * as actions from "./actions";
-import { Message } from "../models/Message";
+import { Action } from '@ngrx/store';
+import * as actions from './actions';
+import { Message } from '../models/Message';
 
 const url = 'http://localhost:60195/api/Messages/';
 
 @Injectable()
-export class MessageEffects {    
+export class MessageEffects {
 
     constructor(private http: HttpClient, private actions$: Actions) {}
 
@@ -35,7 +35,7 @@ export class MessageEffects {
             };
 
             return this.http.post<Message>(url, message)
-                .pipe(map(message => new actions.AddMessageActionSuccess(message)));
+                .pipe(map(message_ => new actions.AddMessageActionSuccess(message_)));
             }
         )
     );

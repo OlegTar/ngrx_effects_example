@@ -1,20 +1,20 @@
-import { RequestState } from "../models/request-state";
-import * as actions from "./actions";
+import { RequestState } from '../models/request-state';
+import * as actions from './actions';
 
 export interface State {
-    state: RequestState
+    state: RequestState;
 }
 
 export const initialState: State = {
     state: RequestState.Idle
-}
+};
 
 export function reducer (state: State = initialState, action: actions.MyActions): State {
     switch (action.type) {
         case actions.REQUEST: {
             return {
                 ...state,
-                state: RequestState.PendingRequest
+                state: RequestState.Pending
             };
         }
 
@@ -38,8 +38,8 @@ export function reducer (state: State = initialState, action: actions.MyActions)
                 state: RequestState.Idle
             };
         }
-        
+
         default:
             return state;
-    }    
+    }
 }

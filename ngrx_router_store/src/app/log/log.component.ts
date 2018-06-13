@@ -15,7 +15,7 @@ export class LogComponent implements OnInit, OnDestroy {
     state: RouterStateUrl,
     navigationId: number
   }[] = [];
-  
+
   constructor(
     private store: Store<State>,
     private cdr: ChangeDetectorRef

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { MainState } from '../main-state';
-import * as actions from '../ngrx/actions'
+import * as actions from '../ngrx/actions';
 import { Subscription } from 'rxjs';
 import { RequestState } from '../models/request-state';
 import { getState } from '../ngrx';
@@ -24,12 +24,12 @@ export class ButtonComponent implements OnInit, OnDestroy {
       this.cdr.detectChanges();
     }));
 
-    //this.store.dispatch(new actions.ResetAction());
+    // this.store.dispatch(new actions.ResetAction());
   }
 
   ngOnDestroy() {
-    this.store.dispatch(new actions.ResetAction());
     this.subscription.unsubscribe();
+    this.store.dispatch(new actions.ResetAction());
   }
 
   click() {
