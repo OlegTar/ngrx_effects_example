@@ -50,3 +50,5 @@ export function reducer(state: State = initialState, action: actions.MessageActi
             return state;
     }
 }
+
+export const getMessages = (state: State) => state.messages;

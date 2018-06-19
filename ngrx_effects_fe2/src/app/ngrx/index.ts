@@ -1,8 +1,8 @@
 import { State } from './reducer';
 import { createSelector } from '@ngrx/store';
 import { MainState } from '../main-state';
+import * as messages from './reducer';
 
 const getMessageStateFromMain = (state: MainState) => state.main;
-const getMessages_ = (state: State) => state.messages;
 
-export const getMessages = createSelector(getMessageStateFromMain, getMessages_);
+export const getMessages = createSelector(getMessageStateFromMain, messages.getMessages);

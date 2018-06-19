@@ -43,3 +43,5 @@ export function reducer (state: State = initialState, action: actions.MyActions)
             return state;
     }
 }
+
+export const getState = (state: State) => state.state;
