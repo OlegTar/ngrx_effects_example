@@ -7,7 +7,8 @@ import { MessageEffects } from './ngrx/effects';
 import { StoreModule, ActionReducer } from '@ngrx/store';
 import { State } from './ngrx/reducer';
 import { MainStateReducers } from './main-state';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 export function logger(reducer_: ActionReducer<State>): ActionReducer<any, any> {
   return function (state: State, action: any): State {
@@ -26,6 +27,9 @@ export function logger(reducer_: ActionReducer<State>): ActionReducer<any, any> 
     BrowserModule,
     StoreModule.forRoot(MainStateReducers, { metaReducers: [logger]}),
     EffectsModule.forRoot([MessageEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+    }),
     HttpClientModule
   ],
   providers: [],
