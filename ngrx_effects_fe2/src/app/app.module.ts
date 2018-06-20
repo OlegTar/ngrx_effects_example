@@ -7,7 +7,7 @@ import { MessageEffects } from './ngrx/effects';
 import { StoreModule, ActionReducer } from '@ngrx/store';
 import { State } from './ngrx/reducer';
 import { MainStateReducers } from './main-state';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 export function logger(reducer_: ActionReducer<State>): ActionReducer<any, any> {

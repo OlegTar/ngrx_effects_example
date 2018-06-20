@@ -18,10 +18,12 @@ export class MessageEffects {
     requestGetMessagesAction$: Observable<Action> = this.actions$.pipe(
         ofType(actions.REQUEST_GET_MESSAGES),
         switchMap((action: actions.RequestGetMessagesAction) => {
+            console.log('effect');
             return this.http.get<Message[]>(url)
-            .pipe(map(messages => new actions.GetMessagesActionSuccess(messages)));
+            .pipe(map(messages => new actions.GetMessagesActionSuccess(messages)),
+            //    startWith(new actions.GetMessagesActionSuccess(null))
+            );
         }),
-        //startWith(new actions.GetMessagesActionSuccess(null))
     );
 
     @Effect()
