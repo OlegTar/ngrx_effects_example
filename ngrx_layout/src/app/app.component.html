@@ -1,2 +1,5 @@
 
+<app-alert></app-alert>
+
 <input type="text" #name><button (click)="send(name.value)">Button</button>
+Server response: <span>{{message$ | async}}</span>

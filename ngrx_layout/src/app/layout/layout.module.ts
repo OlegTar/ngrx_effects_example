@@ -6,6 +6,9 @@ import { AlertComponent } from './alert/alert.component';
   imports: [
     CommonModule
   ],
+  exports: [
+    AlertComponent
+  ],
   declarations: [AlertComponent]
 })
 export class LayoutModule { }
